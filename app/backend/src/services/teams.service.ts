@@ -8,6 +8,10 @@ class TeamsService {
   async getAll(): Promise<ITeam[]> {
     return this.model.findAll();
   }
+
+  async getById(id: string): Promise<ITeam | null> {
+    return this.model.findByPk(Number(id));
+  }
 }
 
 export default TeamsService;

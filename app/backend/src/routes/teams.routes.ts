@@ -11,4 +11,8 @@ router.get('/', (req: Request, res: Response) => {
   teamsConstroller.getAll(req, res);
 });
 
+router.get('/:id', (req: Request, res: Response) => {
+  teamsConstroller.getById(req, res);
+});
+
 export default router;
