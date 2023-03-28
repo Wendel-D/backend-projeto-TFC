@@ -34,5 +34,25 @@ describe('testes', () => {
         expect(chaiHttpResponse.body).to.be.deep.equal(teamsMock)
         expect(chaiHttpResponse.status).to.be.equal(200)
     });
+
+    before(async () => {
+        sinon
+            .stub(Teams, "findByPk")
+            .resolves(
+                teamsMock[0] as Teams);
+    });
+
+    after(() => {
+        (Teams.findByPk as sinon.SinonStub).restore();
+    })
+
+    it('teste teams/1 getById', async () => {
+        chaiHttpResponse = await chai
+        .request(app)
+        .get('/teams/1')
+
+    expect(chaiHttpResponse.body).to.be.deep.equal(teamsMock[0])
+    expect(chaiHttpResponse.status).to.be.equal(200)
+    });
 })
 
