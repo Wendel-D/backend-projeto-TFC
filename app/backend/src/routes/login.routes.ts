@@ -1,13 +1,13 @@
 import { Request, Response, Router } from 'express';
-import emailValidate from '../middlewares/login.validate';
-import LoginController from '../controller/login.controller';
+import {emailValidate, passwordValidate} from '../middlewares/login.validate';
+import LoginController from '../controller/users.controller';
 
 const router = Router();
 
 const loginController = new LoginController()
 
-router.post('/', emailValidate, (req: Request, res: Response) => {
-    loginController
+router.post('/', emailValidate, passwordValidate, (req: Request, res: Response) => {
+    loginController.login(req, res);
 })
 
 export default router;

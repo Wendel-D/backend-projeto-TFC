@@ -2,6 +2,7 @@ import { ModelStatic } from "sequelize";
 import * as bcryptjs from 'bcryptjs'
 import UsersModel from '../database/models/Users.model';
 import { ILogin } from "../interfaces/ILogin";
+import { token } from "../utils/token";
 
 class UsersService {
     protected model: ModelStatic<UsersModel> = UsersModel
@@ -12,7 +13,9 @@ class UsersService {
         const cripto = bcryptjs.compareSync(loginInfo.password, data.password)
         if (!cripto) return null;
         
-        return token
+        const { id, username, role, email} = data;
+        const tokenGen = token({id, username, role, email});
+        return tokenGen;
     }
 }
 
