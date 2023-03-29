@@ -3,10 +3,10 @@ import db from '.';
 
 class Users extends Model {
   declare id: number;
-  declare username: string
-  declare role: string
-  declare email: string
-  declare password: string
+  declare username: string;
+  declare role: string;
+  declare email: string;
+  declare password: string;
 }
 
 Users.init(
@@ -22,17 +22,17 @@ Users.init(
       allowNull: false,
     },
     role: {
-        type: STRING,
-        allowNull: false,
-      },
+      type: STRING,
+      allowNull: false,
+    },
     email: {
-        type: STRING,
-        allowNull: false,
-      },
+      type: STRING,
+      allowNull: false,
+    },
     password: {
-        type: STRING,
-        allowNull: false,
-      },
+      type: STRING,
+      allowNull: false,
+    },
   },
   {
     underscored: true,
