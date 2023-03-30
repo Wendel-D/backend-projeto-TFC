@@ -12,7 +12,7 @@ chai.use(chaiHttp);
 
 const { expect } = chai;
 
-describe('testes', () => {
+describe('testes Teams', () => {
     let chaiHttpResponse: Response;
 
     before(async () => {
