@@ -9,7 +9,6 @@ const tokenValidateMid = (req: Request, res: Response, next: NextFunction) => {
 
   try {
     const validation = tokenValidate(authorization);
-    console.log(validation);
     req.body.userToken = validation;
     next();
   } catch (error) {
