@@ -18,4 +18,8 @@ router.patch('/:id/finish', tokenValidateMid, (req: Request, res: Response) => {
   matchesController.patchFinish(req, res);
 });
 
+router.post('/', tokenValidateMid, (req: Request, res: Response) => {
+  matchesController.createMatches(req, res);
+});
+
 export default router;

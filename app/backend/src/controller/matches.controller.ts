@@ -28,6 +28,11 @@ class MatchesController {
     const finished = await this._service.patchFinish(Number(id));
     res.status(200).json(finished);
   };
+
+  createMatches = async (req:Request, res: Response) => {
+    const result = await this._service.createMatches(req.body);
+    res.status(201).json(result);
+  };
 }
 
 export default MatchesController;

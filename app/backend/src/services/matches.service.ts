@@ -1,6 +1,8 @@
 import { ModelStatic, Op } from 'sequelize';
 import Matches from '../database/models/Matches.model';
 import Teams from '../database/models/Teams.model';
+import { ICreateMatches } from '../interfaces/ICreateMatches';
+import { IStatus } from '../interfaces/IStatus';
 
 class MatchesService {
   protected model: ModelStatic<Matches> = Matches;
@@ -38,6 +40,17 @@ class MatchesService {
 
   async patchFinish(id: number) : Promise<number[]> {
     return this.model.update({ inProgress: false }, { where: { id } });
+  }
+
+  async createMatches(body: ICreateMatches): Promise<Matches | IStatus> {
+    const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = body;
+    return this.model.create({
+      homeTeamId,
+      awayTeamId,
+      homeTeamGoals,
+      awayTeamGoals,
+      inProgress: true,
+    });
   }
 }
 
