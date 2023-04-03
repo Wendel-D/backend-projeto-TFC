@@ -16,6 +16,13 @@ class MatchesController {
     return res.status(200).json(isInProgress);
   };
 
+  updateGoals = async (req:Request, res: Response) => {
+    const { id } = req.params;
+    const { homeTeamGoals, awayTeamGoals } = req.body;
+    const result = await this._service.updateGoals(Number(id), homeTeamGoals, awayTeamGoals);
+    res.status(200).json(result);
+  };
+
   patchFinish = async (req:Request, res: Response) => {
     const { id } = req.params;
     const finished = await this._service.patchFinish(Number(id));

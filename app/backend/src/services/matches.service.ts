@@ -32,6 +32,10 @@ class MatchesService {
     });
   }
 
+  async updateGoals(id: number, homeTeamGoals: number, awayTeamGoals: number): Promise<number[]> {
+    return this.model.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
+  }
+
   async patchFinish(id: number) : Promise<number[]> {
     return this.model.update({ inProgress: false }, { where: { id } });
   }
