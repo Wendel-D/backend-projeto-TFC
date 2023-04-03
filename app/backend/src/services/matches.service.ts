@@ -31,6 +31,10 @@ class MatchesService {
       where: { [Op.and]: [{ inProgress: progress }] },
     });
   }
+
+  async patchFinish(id: number) : Promise<number[]> {
+    return this.model.update({ inProgress: false }, { where: { id } });
+  }
 }
 
 export default MatchesService;
