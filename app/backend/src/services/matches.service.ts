@@ -42,8 +42,15 @@ class MatchesService {
     return this.model.update({ inProgress: false }, { where: { id } });
   }
 
-  async createMatches(body: ICreateMatches): Promise<Matches | IStatus> {
+  async createMatches(body: ICreateMatches): Promise< IStatus | ICreateMatches> {
     const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = body;
+    const homeTeam = await this.model.findOne({ where: { homeTeamId } });
+    const awayTeam = await this.model.findOne({ where: { awayTeamId } });
+
+    if (!awayTeam || !homeTeam) {
+      return { status: 404, message: 'There is no team with such id!' };
+    }
+
     return this.model.create({
       homeTeamId,
       awayTeamId,

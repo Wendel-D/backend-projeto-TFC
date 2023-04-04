@@ -30,7 +30,19 @@ class MatchesController {
   };
 
   createMatches = async (req:Request, res: Response) => {
+    const { homeTeamId, awayTeamId } = req.body;
+
+    if (homeTeamId === awayTeamId) {
+      return res.status(422).json({
+        message: 'It is not possible to create a match with two equal teams' });
+    }
+
     const result = await this._service.createMatches(req.body);
+
+    if (result.message) {
+      return res.status(404).json({ message: result.message });
+    }
+
     res.status(201).json(result);
   };
 }
