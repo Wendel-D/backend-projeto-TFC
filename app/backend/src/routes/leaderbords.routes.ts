@@ -4,8 +4,12 @@ import LeaderboardController from '../controller/leaderboard.controller';
 const leaderboardController = new LeaderboardController();
 const router = Router();
 
-router.get('/home', (req: Request, res: Response) => {
+router.get('/', (req: Request, res: Response) => {
   leaderboardController.getAll(req, res);
+});
+
+router.get('/home', (req: Request, res: Response) => {
+  leaderboardController.filterHome(req, res);
 });
 
 export default router;

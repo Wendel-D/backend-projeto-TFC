@@ -8,6 +8,11 @@ class LeaderboardController {
     const data = await this._service.getAll();
     return res.status(200).json(data);
   };
+
+  filterHome = async (_req: Request, res: Response) => {
+    const data = await this._service.filterHome();
+    return res.status(200).json(data);
+  };
 }
 
 export default LeaderboardController;
