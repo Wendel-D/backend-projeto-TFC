@@ -1,10 +1,25 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+
+# Trybe Futebol Clube
+
+Usando Typescript, POO, Docker, pra fazer uma tabela de liderança e consulta para partidas de futebol. 
+
+
+## Instalação
+
+Instale backend-projeto-TFC com npm
+
+```bash
+  cd backend-projeto-TFC
+  npm install
+```
+
+## Instalação com DOCKER
+
+```bash
+  cd backend-projeto-TFC
+  npm run compose:up
+```
+## Aprendizados
+
+Nesse projeto eu aprendi o uso correto de classes em Typescript  usando conceitos de  POO, SOLID e DOCKER.
+
