@@ -1,25 +1,47 @@
 
-# Trybe Futebol Clube
+# Backend do Projeto TFC
 
-Usando Typescript, POO, Docker, pra fazer uma tabela de liderança e consulta para partidas de futebol. 
+Este repositório contém o código-fonte do backend do Projeto TFC.
 
+## Pré-requisitos
+
+- Node.js
+- Banco de dados MySQL
 
 ## Instalação
 
-Instale backend-projeto-TFC com npm
-
+- Clone este repositório em sua máquina local.
+- Na raiz do projeto, instale as dependências com o comando npm install.
+- Crie um arquivo .env na raiz do projeto com as configurações do seu ambiente (exemplo abaixo).
+- Inicie o servidor com o comando npm start.
+    
 ```bash
-  cd backend-projeto-TFC
-  npm install
+PORT=3000
+DB_HOST=localhost
+DB_USER=seu_usuario
+DB_PASSWORD=sua_senha
+DB_DATABASE=nome_do_banco
+
 ```
+## Funcionalidades
 
-## Instalação com DOCKER
+- '/users': endpoint para cadastro de usuários.
+- '/login': endpoint para autenticação de usuários.
 
-```bash
-  cd backend-projeto-TFC
-  npm run compose:up
-```
-## Aprendizados
+## Tecnologias utilizadas
 
-Nesse projeto eu aprendi o uso correto de classes em Typescript  usando conceitos de  POO, SOLID e DOCKER.
+- Node.js
+- Express
+- MySQL
+- TypeScript
+
+
+## Contribuições
+
+Contribuições são bem-vindas! Para sugerir melhorias ou correções, abra uma  [issue](https://github.com/Wendel-D/backend-projeto-TFC/issues) ou envie um [pull request](https://github.com/Wendel-D/backend-projeto-TFC/pulls).
+
+
+## Autores
+
+- [@Wendel-D](https://github.com/Wendel-D)
 
